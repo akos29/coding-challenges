@@ -2,21 +2,21 @@ To explain the `time` and `space` complexity of the code:
 
 - `Time Complexity`:
 
-  Creating a Set (numsSet) and initializing a variable (currentIndex) both take constant time, O(1).
+  The time complexity of this solution is O(n), where n is the length of the nums array. Here's why:
 
-  The while loop iterates through the nums array once. In the worst case, it will iterate through the entire array once, making it O(n), where n is the length of the nums array.
+  The for loop iterates through the nums array once. This loop runs exactly n times, where n is the length of the input array.
 
-  Inside the loop, we perform constant-time operations:
+  Inside the loop, we perform the following operations:
 
-  Checking if an element is in the set (numsSet.has(currentNum)) takes O(1) on average.
-  Adding an element to the set (numsSet.add(currentNum)) takes O(1) on average.
-  Removing an element from the array (nums.splice(currentIndex, 1)) takes O(n) in the worst case, but on average, it's more like O(1) because the array shifting is done efficiently.
-  Overall, the time complexity of this code is O(n), where n is the length of the nums array, because the while loop iterates through each element in the array once.
+  Calculating the complement (`complement = target - nums[i]`) takes constant time, O(1).
+  Checking if the complement exists in the numIndices Map (`numIndices.has(complement)`) also takes constant time, O(1).
+  Adding an entry to the numIndices Map (`numIndices.set(nums[i], i)`) takes constant time, O(1).
+  Since all these operations are performed sequentially within the loop, and they all take constant time, the overall time complexity remains O(n) because the loop's time complexity dominates the operations inside it.
 
-- `Space Complexity`:
+- `Space Complexity:`
 
-  The numsSet Set is used to store unique elements from the nums array. In the worst case, if all elements are unique, the Set could store up to n elements, where n is the length of the nums array. Therefore, the space complexity is O(n).
+  The space complexity of this solution is `O(n)` as well. Here's why:
 
-  Other variables (currentIndex, currentNum) used in the code take constant space, O(1).
+  We use a Map called `numIndices` to store numbers and their indices. In the worst case, when there are no duplicate numbers in the `nums` array, the map can store all `n` numbers, resulting in `O(n)` space usage.
 
-Overall, the space complexity of this code is O(n) due to the space used by the numsSet, where n is the length of the nums array.
+  Other variables used in the function, such as `i`, `complement`, and the return array, consume only a constant amount of space and do not depend on the input size.

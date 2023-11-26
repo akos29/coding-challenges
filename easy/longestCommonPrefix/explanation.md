@@ -7,7 +7,7 @@ The time complexity of this function is O(n * m), where:
 n is the number of strings in the input array strs.
 m is the length of the longest common prefix.
 Here's why:
-
+  
 The outer loop iterates through the characters of the first string, which has a length of m.
 
 The inner loop compares characters in all other strings. In the worst case, it has to compare all characters in all strings (O(n * m) comparisons).

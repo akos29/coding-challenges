@@ -17,14 +17,9 @@ var isValid = function(s) {
             if(!brackets.length){
                 return false;
             } 
-           const j= brackets.pop()
-           console.log(j, 'poped bracket')
+           const j= brackets.pop();
            const k= openingTags.indexOf(j)
-              console.log(k, 'index of poped bracket')
-              console.log(str[i], 'closing bracket')
-              console.log(closingTags[k], 'closing bracket')
-              console.log(str[i]===closingTags[k], 'closing bracket')
-           if(str[i]===closingTags[k]){
+           if(!(str[i]==closingTags[k])){
                return false;
            }
         }
@@ -33,7 +28,7 @@ var isValid = function(s) {
     if(brackets.length){
         return false;
     }
-    // return true;
+    return true;
    
 };
 
